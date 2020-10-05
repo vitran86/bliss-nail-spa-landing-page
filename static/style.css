@@ -1,0 +1,1049 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Black+Ops+One&family=Monoton&family=Ultra&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background1: rgb(16, 200, 233);
+  --background2: rgb(228, 224, 224);
+  --background3: darkgrey;
+}
+
+body {
+  font-family: "montserrat", sans-serif;
+  font-size: 12px;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 3px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* welcome section */
+#welcome .container {
+  flex-direction: column;
+}
+
+#welcome h1 {
+  display: inline-block;
+  width: fit-content;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 3em;
+  color: transparent;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+  margin-right: 6px;
+  text-align: center;
+  position: relative;
+  animation: welcome-text 1s ease forwards;
+  animation-delay: 1s;
+}
+
+#welcome h1:nth-child(1) {
+  animation-delay: 1.5s;
+}
+#welcome h1:nth-child(2) {
+  animation: welcome-text-name 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+#welcome h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--background1);
+  animation: welcome-text-box 1s ease 1.5s;
+}
+
+#welcome h1:nth-child(1) span {
+  animation-delay: 1s;
+}
+#welcome h1:nth-child(2) span {
+  animation-delay: 2s;
+}
+
+.pic-box {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.pic-box::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: whitesmoke;
+  opacity: 0.2;
+}
+
+.main-pic {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.pic1 {
+  background-image: url(/static/picture/pedi/spapedi2.png);
+}
+
+.pic1.show {
+  opacity: 1;
+}
+
+.pic2 {
+  background-image: url(/static/picture/mani-pedi.jpg);
+}
+
+.pic2.show {
+  opacity: 1;
+}
+.pic3 {
+  background-image: url(/static/picture/nailsalon.jpg);
+}
+
+.pic3.show {
+  opacity: 1;
+}
+
+/* keyframes start*/
+@keyframes welcome-text-box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes welcome-text {
+  100% {
+    color: black;
+  }
+}
+@keyframes welcome-text-name {
+  100% {
+    color: var(--background1);
+    font-weight: 600;
+    font-size: 4em;
+    text-transform: uppercase;
+  }
+}
+/* keyframes end*/
+
+/* Section header title*/
+.title {
+  font-size: 3em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 10px;
+  color: black;
+  text-align: center;
+}
+
+.title span {
+  color: var(--background1);
+}
+/* End Section header title*/
+
+/*Service section*/
+#service .container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  padding: 100px 0;
+  max-width: 1200px;
+}
+
+.service-header p {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-top: 5px;
+  line-height: 1.5em;
+  letter-spacing: 0.05rem;
+}
+
+.service-cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.service-item {
+  width: 80%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid var(--background2);
+  position: relative;
+}
+
+.service-item::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0.3;
+}
+
+.service-item h2 {
+  font-size: 2.5em;
+  background-color: whitesmoke;
+  color: var(--background1);
+  z-index: 1;
+}
+
+.service-item p {
+  font-size: 1.5em;
+  z-index: 1;
+}
+
+.service-item p b {
+  font-weight: 400;
+}
+.card1 {
+  background-image: url(/static/picture/mani/manicure.jpg);
+}
+.card2 {
+  background-image: url(/static/picture/pedi/spapedi.jpg);
+}
+.card3 {
+  background-image: url(/static/picture/wax3.jpg);
+}
+.card4 {
+  background-image: url(/static/picture/eyelash/eyelash.jpg);
+}
+.card5 {
+  background-image: url(/static/picture/massage/spa-massage.jpg);
+}
+
+.card6 {
+  background-image: url(/static/picture/facial/facial2.jpg);
+}
+
+.collapsible {
+  height: 40px;
+  width: 120px;
+  font-size: 1.5em;
+  margin-bottom: 12px;
+  border: 1px solid black;
+  border-radius: 25px;
+  background: var(--background2);
+  color: var(--background1);
+  position: relative;
+}
+.collapsible::after {
+  position: absolute;
+  content: " ";
+  width: 0;
+  top: 28px;
+  left: 15px;
+  background: transparent;
+  border-bottom: 1px solid var(--background1);
+}
+
+.collapsible:hover {
+  color: black;
+  background: linear-gradient(white, var(--background1));
+}
+
+.collapsible:hover::after {
+  width: 75%;
+  transition: width 0.5s ease;
+  border-bottom: 1px solid black;
+}
+
+.card3.hidden,
+.card4.hidden,
+.card5.hidden,
+.card6.hidden {
+  display: none;
+}
+
+/*End Service section*/
+
+/* Technician section*/
+#technician .container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 0;
+  width: 100vw;
+}
+
+.technician-header p {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  line-height: 1.5em;
+  letter-spacing: 0.05rem;
+}
+
+.technician-profile {
+  width: 80%;
+  padding-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.image {
+  width: 250px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.image::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: white;
+  opacity: 0.2;
+}
+
+/* Tech images*/
+.tech1 {
+  background-image: url(/static/picture/tech1.jpg);
+}
+
+.tech2 {
+  background-image: url(/static/picture/techmen2.jpg);
+}
+
+.tech3 {
+  background-image: url(/static/picture/tech2.jfif);
+}
+
+.tech4 {
+  background-image: url(/static/picture/techmen1.jpg);
+  background-position: top;
+}
+
+.tech5 {
+  background-image: url(/static/picture/tech4.jpg);
+}
+
+.tech6 {
+  background-image: url(/static/picture/tech3.jfif);
+}
+
+/* End tech images*/
+
+/* tag control*/
+/*******tag1*******/
+.tag1 {
+  position: relative;
+}
+
+.tag1 button {
+  position: absolute;
+}
+
+.tag1.active .introduce-text {
+  opacity: 0.7;
+}
+
+.btn-1.clicked {
+  background-color: var(--background1);
+}
+
+/*******tag2*******/
+.tag2 {
+  position: relative;
+}
+
+.tag2 button {
+  position: absolute;
+}
+
+.tag2.active .introduce-text {
+  opacity: 0.7;
+}
+
+.btn-2.clicked {
+  background-color: var(--background1);
+}
+
+/*******tag3*******/
+.tag3 {
+  position: relative;
+}
+
+.tag3 button {
+  position: absolute;
+}
+
+.tag3.active .introduce-text {
+  opacity: 0.7;
+}
+
+.btn-3.clicked {
+  background-color: var(--background1);
+}
+/*******tag4*******/
+.tag4 {
+  position: relative;
+}
+
+.tag4 button {
+  position: absolute;
+}
+
+.tag4.active .introduce-text {
+  opacity: 0.7;
+}
+
+.btn-4.clicked {
+  background-color: var(--background1);
+}
+
+/*******tag5*******/
+.tag5 {
+  position: relative;
+}
+
+.tag5 button {
+  position: absolute;
+}
+
+.tag5.active .introduce-text {
+  opacity: 0.7;
+}
+
+.btn-5.clicked {
+  background-color: var(--background1);
+}
+
+/*******tag6*******/
+.tag6 {
+  position: relative;
+}
+
+.tag6 button {
+  position: absolute;
+}
+
+.tag6.active .introduce-text {
+  opacity: 0.7;
+}
+
+.btn-6.clicked {
+  background-color: var(--background1);
+}
+
+/* Tag style*/
+.tag {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-left: 10px;
+  border-radius: 15px;
+  background-color: var(--background1);
+  overflow: hidden;
+  box-shadow: 10px 5px 5px -3px var(--background2);
+}
+.name {
+  font-size: 2em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: white;
+  margin-top: 25px;
+}
+
+.rating {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+button.introduce {
+  padding-top: 4px;
+  width: 105px;
+  height: 35px;
+  left: 50%;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: var(--background2);
+  border: none;
+  border-radius: 15px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.introduce-text {
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.tag .profile {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* end tag style1*/
+
+/* End Technician section*/
+
+/* About-us section*/
+#about-us .container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-us-header.title {
+  width: 100vw;
+  justify-content: center;
+}
+.about-us-avatar {
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-image: url(/static/picture/mani/manicure1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.about-us-avatar::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  top: -100px;
+  left: 100px;
+  background: linear-gradient(white, var(--background1));
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: -2;
+  animation: bubble 7s linear infinite;
+  animation-delay: 1s;
+}
+
+.about-us-avatar::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  bottom: -80px;
+  left: 200px;
+  background: linear-gradient(white, var(--background1));
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.about-us.container p {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-left: 26px;
+  display: block;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.5em;
+  letter-spacing: 0.05rem;
+}
+
+.deco-1,
+.deco-2,
+.deco-3 {
+  border-radius: 50%;
+  border: 1px solid white;
+  background: linear-gradient(white, var(--background1));
+  opacity: 0.2;
+  margin-top: 20px;
+  animation: bubble 7s linear infinite;
+}
+
+.deco-1 {
+  height: 200px;
+  width: 200px;
+  margin-right: 10px;
+  animation-delay: 0.5s;
+}
+
+.deco-2 {
+  height: 150px;
+  width: 150px;
+  margin-right: 10px;
+  animation-delay: 2.5s;
+}
+
+.deco-3 {
+  height: 200px;
+  width: 200px;
+  margin-right: 10px;
+  animation-delay: 4s;
+}
+@keyframes bubble {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(-30vh) scale(1.5);
+    opacity: 0.3;
+  }
+  70% {
+    transform: translateY(-50vh) scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-80vh);
+    opacity: 0;
+  }
+}
+
+/* End About-us section*/
+
+/* Appointment section*/
+#appointment .container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 100px 0;
+  position: relative;
+}
+#appointment .container::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(white, var(--background1));
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.appointment {
+  font-size: 1.2em;
+  margin-bottom: 16px;
+}
+
+#appointment input {
+  height: 2em;
+}
+
+input#tech-request-N,
+input#tech-request-Y {
+  height: 1em;
+  align-self: last baseline;
+}
+
+select#service-request {
+  height: 2em;
+}
+
+.post-btn {
+  position: absolute;
+  bottom: 15%;
+  left: 35%;
+  padding-top: 4px;
+  width: 200px;
+  height: 35px;
+  font-size: 1.125em;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid var(--background3);
+  background-color: var(--background2);
+  cursor: pointer;
+  align-self: center;
+  margin-left: 56px;
+}
+
+.post-btn:hover {
+  background: linear-gradient(white, var(--background3));
+}
+
+.post-btn.clicked {
+  background-color: var(--background1);
+}
+
+/* End Appointment section*/
+
+/* footer */
+.footer.container {
+  min-height: fit-content;
+  flex-direction: column;
+  padding: 40px 0;
+  width: 100%;
+  background: linear-gradient(var(--background3), white);
+  position: relative;
+}
+
+.back-to-top-btn {
+  height: 70px;
+  width: 100px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  left: 90%;
+}
+.back-to-top {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.btn-name {
+  font-size: 1em;
+  font-weight: 900;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+button.back-to-top:hover {
+  background: black;
+}
+
+button.back-to-top:hover + .btn-name {
+  opacity: 1;
+}
+
+.footer.container a {
+  text-transform: capitalize;
+  font-size: 1em;
+  color: black;
+  cursor: pointer;
+}
+
+.footer.container a:hover {
+  font-weight: 900;
+  color: var(--background1);
+}
+
+svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+svg:hover {
+  fill: var(--background1);
+}
+
+.footer__info {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.contact-us {
+  margin-right: 10%;
+}
+
+.footer__info h2 {
+  font-size: 1.5em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  text-align: center;
+  color: black;
+}
+
+.contact-us p {
+  font-size: 1.2em;
+}
+
+.contact-us span {
+  margin-left: 10px;
+}
+
+footer ul {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links {
+  margin-top: -62px;
+}
+
+.social-links li {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.footer__copyright {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+.footer__copyright p {
+  margin-top: 16px;
+}
+
+/* End footer */
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-bar__logo {
+  width: 150px;
+  height: 90px;
+  background-image: url(/static/picture/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.nav-bar__links li {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 16px;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.nav__links a {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: 900;
+  margin: 0;
+  position: relative;
+  color: var(--background1);
+  transition: color 0.5s ease-out;
+}
+
+.nav__links a:hover {
+  font-weight: 600;
+  color: black;
+}
+
+.nav__links a::after {
+  position: absolute;
+  content: " ";
+  border-top: 1px solid black;
+  width: 0;
+  right: 0;
+  top: 20px;
+  left: 0;
+}
+
+.nav__links a:hover::after {
+  width: 100%;
+  transform: scale(1.2);
+  transition: transform 0.5s ease;
+  border-color: rgb(134, 133, 133);
+}
+
+.burger-menu {
+  display: block;
+  border: none;
+  height: 2px;
+  width: 30px;
+  background: black;
+  position: relative;
+}
+
+.burger-menu:before,
+.burger-menu:after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  left: 0;
+  background: black;
+}
+
+.burger-menu:before {
+  top: 10px;
+}
+.burger-menu:after {
+  bottom: 10px;
+}
+
+.burger-menu {
+  display: block;
+  margin-left: 150px;
+  position: relative;
+}
+
+.burger-menu:hover,
+.burger-menu:hover::before,
+.burger-menu:hover::after {
+  background: var(--background1);
+}
+
+.nav__links {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 1em;
+  right: 10px;
+  top: 10vh;
+  height: 50vh;
+  width: 250px;
+  background-color: white;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.5s ease-out 150ms;
+}
+
+.burger-menu.clicked + .nav-bar__links .nav__links {
+  opacity: 1;
+  transition: opacity 0.5s ease-out 200ms;
+}
+
+/* End header */
+
+/* Media queries*/
+@media screen and (min-width: 600px) {
+  .about-us-avatar::after {
+    animation: none;
+  }
+  .deco-1 {
+    display: none;
+  }
+  .about-us-avatar::before {
+    bottom: -150px;
+    left: -100px;
+  }
+
+  .post-btn {
+    left: 20%;
+  }
+}
+@media screen and (min-width: 960px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .nav-bar__links .nav__links {
+    opacity: 1;
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 16px;
+    height: auto;
+    width: auto;
+  }
+
+  .about-us.container p {
+    max-width: 800px;
+  }
+
+  .deco-1 {
+    display: block;
+  }
+  .post-btn {
+    left: 30%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-bar__links {
+    width: 80%;
+    box-shadow: -1px 5px 5px -5px var(--background1);
+  }
+
+  .post-btn {
+    left: 40%;
+  }
+}
