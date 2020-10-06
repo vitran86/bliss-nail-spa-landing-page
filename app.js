@@ -86,5 +86,45 @@ aptmBtn.addEventListener("click", function (e) {
 const backToTopBtn = document.querySelector(".back-to-top");
 
 backToTopBtn.addEventListener("click", function () {
-  window.scrollTo(0, 0);
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+});
+
+// Scroll to another sections //
+const sections = [
+  {
+    menuId: "section-welcome",
+    sectionId: "welcome",
+  },
+  {
+    menuId: "section-service",
+    sectionId: "service",
+  },
+  {
+    menuId: "section-technician",
+    sectionId: "technician",
+  },
+  {
+    menuId: "section-about-us",
+    sectionId: "about-us",
+  },
+  {
+    menuId: "section-appointment",
+    sectionId: "appointment",
+  },
+];
+
+function scrollToSection(id) {
+  const element = document.getElementById(id);
+  window.scrollTo({
+    top: element.offsetTop,
+    left: 0,
+    behavior: "smooth",
+  });
+}
+
+sections.forEach((section) => {
+  const menuLink = document.getElementById(section.menuId);
+  return menuLink.addEventListener("click", function () {
+    scrollToSection(section.sectionId);
+  });
 });

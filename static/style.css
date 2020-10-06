@@ -152,7 +152,6 @@ a {
 @keyframes welcome-text-name {
   100% {
     color: var(--background1);
-    font-weight: 600;
     font-size: 4em;
     text-transform: uppercase;
   }
