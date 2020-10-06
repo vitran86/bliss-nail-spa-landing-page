@@ -115,6 +115,7 @@ const sections = [
 
 function scrollToSection(id) {
   const element = document.getElementById(id);
+  console.log(element.offsetTop);
   window.scrollTo({
     top: element.offsetTop,
     left: 0,
