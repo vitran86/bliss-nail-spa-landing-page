@@ -34,6 +34,15 @@ a {
   justify-content: center;
 }
 
+section {
+  background: none;
+  transition: background 0.5s ease 250ms;
+}
+
+section.active {
+  background: linear-gradient(90deg, white, var(--background1) 400%);
+}
+
 /* welcome section */
 #welcome .container {
   flex-direction: column;
@@ -894,7 +903,7 @@ header {
   font-size: 1.2em;
 }
 
-.nav__links a {
+.nav__links {
   cursor: pointer;
   display: inline-block;
   font-size: 1.2em;
@@ -905,26 +914,11 @@ header {
   transition: color 0.5s ease-out;
 }
 
-.nav__links a:hover {
+.nav__links li:hover {
   font-weight: 600;
   color: black;
-}
-
-.nav__links a::after {
-  position: absolute;
-  content: " ";
   border-top: 1px solid black;
-  width: 0;
-  right: 0;
-  top: 20px;
-  left: 0;
-}
-
-.nav__links a:hover::after {
-  width: 100%;
-  transform: scale(1.2);
-  transition: transform 0.5s ease;
-  border-color: rgb(134, 133, 133);
+  transition: scale(1.5);
 }
 
 .burger-menu {
