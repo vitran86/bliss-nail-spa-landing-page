@@ -883,6 +883,14 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 12;
+}
+
+header.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin-bottom: 16px;
 }
 
 .nav-bar__logo {
@@ -919,6 +927,11 @@ header {
   color: black;
   border-top: 1px solid black;
   transition: scale(1.5);
+}
+
+.nav__links li.active {
+  color: rgba(7, 50, 114, 0.918);
+  border-bottom: 1px solid black;
 }
 
 .burger-menu {

@@ -1,10 +1,10 @@
 console.log(`this file was created by Vi`);
 
-// Define variable
+// Define variable. This variable is an array which keeps 02 matched Ids in an object.
 const sections = [
   {
-    menuId: "section-welcome",
-    sectionId: "welcome",
+    menuId: "section-welcome", // this Id will be added for newNavButton when it was generated.
+    sectionId: "welcome", // this Id was added for each section in HTML file manually.
   },
   {
     menuId: "section-service",
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupBackToTopBtn();
 });
 
-// Check which section is in viewport, then add active class for it
+// Check which section is in viewport, then add active class for it and active class for its button in navbar.
 
 document.addEventListener(
   "scroll",
@@ -188,10 +188,13 @@ document.addEventListener(
 function checkSectionInViewport() {
   sections.forEach((section) => {
     const sectionElement = document.getElementById(`${section.sectionId}`);
+    const activeNavBtn = document.getElementById(`${section.menuId}`);
     if (isInViewport(sectionElement) === "yes") {
       sectionElement.classList.add("active");
+      activeNavBtn.classList.add("active");
     } else {
       sectionElement.classList.remove("active");
+      activeNavBtn.classList.remove("active");
     }
   });
 }
@@ -202,5 +205,25 @@ function isInViewport(Element) {
     return "yes";
   } else {
     return "no";
+  }
+}
+
+// Create fixed header
+document.addEventListener(
+  "scroll",
+  function () {
+    fixedHeader();
+  },
+  {
+    passive: true,
+  }
+);
+const header = document.getElementById("header");
+
+function fixedHeader() {
+  if (window.pageYOffset > header.offsetTop) {
+    header.classList.add("fixed");
+  } else {
+    header.classList.remove("fixed");
   }
 }
